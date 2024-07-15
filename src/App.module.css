@@ -7,12 +7,11 @@ body {
 }
 
 .navbar {
-  padding: 10 20;
+  padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #000000;
-  padding: 10px 20px;
   color: white;
 }
 
@@ -20,11 +19,13 @@ body {
   display: flex;
   align-items: center;
 }
+
 .navbarLeft img {
   width: 40px; /* Adjust size as needed */
   height: auto; /* Maintains aspect ratio */
   margin-right: 10px; /* Space between the logo and text */
 }
+
 /* Ensure links in .navbarLeft have the same style whether visited or not */
 .navbarLeft p,
 .navbarLeft p:visited {
@@ -36,12 +37,12 @@ body {
 .navbarLeft p:hover {
   text-decoration: underline; /* Add underline on hover */
 }
+
 .navbarIcon {
   width: 30px;
   height: 30px;
   margin-right: 10px;
 }
-
 
 .navbarText {
   font-size: 1.5em;
@@ -55,6 +56,8 @@ body {
 }
 
 .searchBar {
+  display: flex;
+  align-items: center;
   position: relative;
   width: 50%;
   max-width: 600px;
@@ -71,7 +74,7 @@ body {
 
 .searchInput {
   flex: 1;
-  padding: 10px 15px;
+  padding: 10px 15px 10px 35px; /* Adjusted padding to account for the search icon */
   font-size: 16px;
   border: 2px solid #ddd;
   border-radius: 25px 0 0 25px;
@@ -81,6 +84,31 @@ body {
 
 .searchInput:focus {
   border-color: #007bff;
+}
+
+.searchButton {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #007bff;
+  border: 2px solid #007bff;
+  border-radius: 0 25px 25px 0;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.searchButton:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.searchButton:focus {
+  outline: none;
+}
+
+.searchButton:active {
+  background-color: #004085;
+  border-color: #004085;
 }
 
 .content {
@@ -130,19 +158,6 @@ body {
   color: #666; /* Lighter text color */
   margin-left: 10px; /* Spacing between title and info */
 }
-@media (max-width: 768px) {
-  .navbarCenter {
-    display: none;
-  }
-  
-  .content {
-    flex-direction: column;
-  }
-  
-  .posts, .subreddits {
-    flex: 1;
-  }
-}
 
 .subredditPage {
   padding: 20px;
@@ -164,80 +179,77 @@ body {
 .voteButtons {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-right: 10px;
-}
+    align-items: center;
+    margin-right: 10px;
+  }
 
-.upvote, .downvote {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 1.5rem;
-}
-
-.postContent {
-  flex-grow: 1;
-}
-
-.postContent h2 {
-  margin: 0;
-  font-size: 1.25rem;
-}
-
-.postContent img {
-  max-width: 100%;
-  height: auto;
-  margin: 10px 0;
-}
-
-.postContent p {
-  font-size: 1rem;
-}
-
-.authorInfo {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.authorIcon {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  margin-right: 12px;
-}
-
-.row{
-  display: flex;
-
-}
-.row img{
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  margin-right: 15px;}
-  
-  .searchButton {
-    padding: 10px 20px;
-    font-size: 16px;
-    color: white;
-    background-color: #007bff;
-    border: 2px solid #007bff;
-    border-radius: 0 25px 25px 0;
+  .upvote, .downvote {
+    background: none;
+    border: none;
     cursor: pointer;
-    transition: background-color 0.3s, border-color 0.3s;
+    font-size: 1.5rem;
+  }
+
+  .postContent {
+    flex-grow: 1;
   }
   
-  .searchButton:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
+
+  .postContent h2 {
+    margin: 0;
+    font-size: 1.25rem;
+  }
+
+  .postContent img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+  }
+  .searchIcon {
+    width: 16px; /* Adjust icon size */
+    height: 16px;
   }
   
-  .searchButton:focus {
-    outline: none;
+
+  .postContent p {
+    font-size: 1rem;
   }
+
+  .authorInfo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .authorIcon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 12px;
+  }
+
+  .row {
+    display: flex;
+  }
+
+  .row img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+  }
+
   
-  .searchButton:active {
-    background-color: #004085;
-    border-color: #004085;
+@media (max-width: 600px) {
+  .searchBar {
+    flex-direction: row; /* Ensure items are in a row */
   }
+
+  .searchInput {
+    font-size: 14px; /* Smaller font size */
+  }
+
+  .searchButton {
+    padding: 5px; /* Smaller button */
+  }
+}
